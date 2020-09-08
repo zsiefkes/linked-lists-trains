@@ -88,6 +88,12 @@ public class EntryPoint {
 		System.out.println(t.getWagon(t.findWagon("hello")).getValue());
 		
 		System.out.println(t.get(3));
+		
+		System.out.println("starting to remove");
+		t.remove(3);
+		printTrain(t);
+		t.remove(0);
+		printTrain(t);
 	}
 
 }

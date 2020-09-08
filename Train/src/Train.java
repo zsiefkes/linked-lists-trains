@@ -1,21 +1,21 @@
 
 public class Train<T> {
 	private Wagon<T> head;
-	
+
 	public Wagon<T> getHead() {
 		return head;
 	}
-	
+
 	public int size() {
 		if (head == null)
 			return 0;
 		return head.size();
 	}
-	
+
 	public Wagon<T> getWagon(int i) {
 		return head.getWagon(i);
 	}
-	
+
 	public int findWagon(T x) {
 		int i = 0;
 		Wagon<T> w = head;
@@ -29,11 +29,21 @@ public class Train<T> {
 			return -1;
 		return i;
 	}
-	
+
 	public T get(int i) {
 		return this.getWagon(i).getValue();
 	}
-	
+
+	public void remove(int i) {
+		if (i == 0) {
+			head = head.getNext();
+		} else {
+			Wagon<T> wagonBefore = this.getWagon(i - 1);
+			Wagon<T> removedWagon = this.getWagon(i);
+			wagonBefore.setNext(removedWagon.getNext());
+		}
+	}
+
 	public void appendWagon(Wagon<T> w) {
 		if (head == null) {
 			head = w;
@@ -45,12 +55,12 @@ public class Train<T> {
 		}
 		last.setNext(w);
 	}
-	
+
 	public void prepend(T x) {
 		Wagon<T> w = new Wagon<T>(x, head);
 		head = w;
 	}
-	
+
 	public void prepend(Wagon<T> w) {
 		w.setNext(head);
 		head = w;

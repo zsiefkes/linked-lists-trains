@@ -83,6 +83,9 @@ public class EntryPoint {
 		
 		w = t.getWagon(2);
 		System.out.println(w.getValue());
+		
+		System.out.println(t.findWagon("hello"));
+		System.out.println(t.getWagon(t.findWagon("hello")).getValue());
 	}
 
 }

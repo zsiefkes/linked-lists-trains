@@ -16,6 +16,20 @@ public class Train<T> {
 		return head.getWagon(i);
 	}
 	
+	public int findWagon(T x) {
+		int i = 0;
+		Wagon<T> w = head;
+		while (w != null) {
+			if (w.getValue().equals(x))
+				break;
+			i++;
+			w = w.getNext();
+		}
+		if (w == null)
+			return -1;
+		return i;
+	}
+	
 	public void appendWagon(Wagon<T> w) {
 		if (head == null) {
 			head = w;

@@ -30,6 +30,10 @@ public class Train<T> {
 		return i;
 	}
 	
+	public T get(int i) {
+		return this.getWagon(i).getValue();
+	}
+	
 	public void appendWagon(Wagon<T> w) {
 		if (head == null) {
 			head = w;

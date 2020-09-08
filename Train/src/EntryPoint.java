@@ -13,8 +13,8 @@ public class EntryPoint {
 		for (Tree c : t.getChildren())
 			printTree(c, "  " + prefix);
 	}
-	
-	public static void main(String[] args) {
+
+	public static void recursionExamples() {
 		System.out.println(factorial(4));
 		Tree a = new Tree("hello");
 		Tree b = new Tree("world");
@@ -32,6 +32,43 @@ public class EntryPoint {
 		//     def
 		//     123
 		printTree(a, "");
+	}
+	
+	public static void printWagons(Wagon<String> w) {
+		if (w == null) {
+			System.out.println("(end of train)");
+			return;
+		}
+		System.out.println(w.getValue());
+		printWagons(w.getNext());
+	}
+	
+	public static void printWagonsIteratively(Wagon<String> w) {
+		while (w != null) {
+			System.out.println(w.getValue());
+			w = w.getNext();
+		}
+		System.out.println("(end of train)");
+	}
+	
+	public static void printTrain(Train<String> t) {
+		Wagon<String> w = t.getHead();
+		if (w == null) {
+			System.out.println("(empty train)");
+		} else {
+			printWagons(w);
+		}
+	}
+	
+	public static void main(String[] args) {
+		Train<String> t = new Train<String>();
+		t.prepend("hello");
+		System.out.println(t.getHead().getValue());
+		t.prepend("world");
+		System.out.println(t.getHead().getValue());
+		System.out.println(t.getHead().getNext().getValue());
+		System.out.println("printTrain:");
+		printTrain(t);
 	}
 
 }

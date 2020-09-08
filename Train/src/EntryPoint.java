@@ -80,6 +80,9 @@ public class EntryPoint {
 		t.appendWagon(new Wagon<String>("???", null));
 		System.out.println("---");
 		printTrain(t);
+		
+		w = t.getWagon(2);
+		System.out.println(w.getValue());
 	}
 
 }

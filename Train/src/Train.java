@@ -12,6 +12,10 @@ public class Train<T> {
 		return head.size();
 	}
 	
+	public Wagon<T> getWagon(int i) {
+		return head.getWagon(i);
+	}
+	
 	public void appendWagon(Wagon<T> w) {
 		if (head == null) {
 			head = w;

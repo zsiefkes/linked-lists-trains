@@ -16,6 +16,11 @@ public class Wagon<Q> {
 		next = n;
 	}
 	
+	public void insertAfter(Wagon<Q> n) {
+		n.setNext(next);
+		next = n;
+	}
+	
 	public int size() {
 		if (next == null) {
 			return 1;

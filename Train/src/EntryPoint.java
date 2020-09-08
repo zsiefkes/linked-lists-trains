@@ -71,6 +71,12 @@ public class EntryPoint {
 		printTrain(t);
 		System.out.println(t.getHead().size());
 		System.out.println(t.size());
+		Wagon<String> w = t.getHead();
+		Wagon<String> newWagon = new Wagon<String>("abc", null);
+		w.insertAfter(newWagon);
+		printTrain(t);
+		newWagon.insertAfter(new Wagon<String>("def", null));
+		printTrain(t);
 	}
 
 }

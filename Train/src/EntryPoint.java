@@ -69,6 +69,8 @@ public class EntryPoint {
 		System.out.println(t.getHead().getNext().getValue());
 		System.out.println("printTrain:");
 		printTrain(t);
+		System.out.println(t.getHead().size());
+		System.out.println(t.size());
 	}
 
 }

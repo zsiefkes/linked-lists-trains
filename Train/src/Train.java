@@ -6,6 +6,12 @@ public class Train<T> {
 		return head;
 	}
 	
+	public int size() {
+		if (head == null)
+			return 0;
+		return head.size();
+	}
+	
 	public void prepend(T x) {
 		Wagon<T> w = new Wagon<T>(x, head);
 		head = w;

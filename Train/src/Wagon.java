@@ -16,6 +16,13 @@ public class Wagon<Q> {
 		next = n;
 	}
 	
+	public int size() {
+		if (next == null) {
+			return 1;
+		}
+		return 1 + next.size();
+	}
+	
 	public void setNext(Wagon<Q> n) {
 		next = n;
 	}

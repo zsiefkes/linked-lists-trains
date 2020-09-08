@@ -43,6 +43,16 @@ public class Train<T> {
 			wagonBefore.setNext(removedWagon.getNext());
 		}
 	}
+	
+	public Train<T> reversed() {
+		Train<T> ret = new Train<T>();
+		Wagon<T> w = head;
+		while (w != null) {
+			ret.prepend(w.getValue());
+			w = w.getNext();
+		}
+		return ret;
+	}
 
 	public void insert(int i, T val) {
 		if (i == 0) {

@@ -99,6 +99,7 @@ public class EntryPoint {
 		printTrain(t);
 		t.insert(0, "shgsfsdjfds");
 		printTrain(t);
+		printTrain(t.reversed());
 	}
 
 }

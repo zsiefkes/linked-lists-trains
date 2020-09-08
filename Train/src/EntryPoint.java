@@ -77,6 +77,9 @@ public class EntryPoint {
 		printTrain(t);
 		newWagon.insertAfter(new Wagon<String>("def", null));
 		printTrain(t);
+		t.appendWagon(new Wagon<String>("???", null));
+		System.out.println("---");
+		printTrain(t);
 	}
 
 }

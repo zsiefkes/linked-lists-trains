@@ -44,6 +44,15 @@ public class Train<T> {
 		}
 	}
 
+	public void insert(int i, T val) {
+		if (i == 0) {
+			this.prepend(val);
+		} else {
+			Wagon<T> w = getWagon(i - 1);
+			w.insertAfter(new Wagon<T>(val, null));
+		}
+	}
+
 	public void appendWagon(Wagon<T> w) {
 		if (head == null) {
 			head = w;

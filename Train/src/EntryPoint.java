@@ -94,6 +94,11 @@ public class EntryPoint {
 		printTrain(t);
 		t.remove(0);
 		printTrain(t);
+		
+		t.insert(1, "AAAAAAAAAAA");
+		printTrain(t);
+		t.insert(0, "shgsfsdjfds");
+		printTrain(t);
 	}
 
 }

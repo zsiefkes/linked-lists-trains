@@ -3,17 +3,18 @@ public class Wagon<Q> {
 	private Q value;
 	private Wagon<Q> next;
 	
+	// constructor
+	public Wagon(Q val, Wagon<Q> n) {
+		value = val;
+		next = n;
+	}
+	
 	public Q getValue() {
 		return value;
 	}
 	
 	public Wagon<Q> getNext() {
 		return next;
-	}
-	
-	public Wagon(Q val, Wagon<Q> n) {
-		value = val;
-		next = n;
 	}
 	
 	public Wagon<Q> getWagon(int i) {

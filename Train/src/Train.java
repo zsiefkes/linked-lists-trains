@@ -1,6 +1,9 @@
 
 public class Train<T> {
 	private Wagon<T> head;
+	
+	// oi where the constructor at? how you gonna go new Train<eg. String>() and then just leave it at that?
+	// apparently you can lol and it just initializes with nothing. cool.
 
 	public Wagon<T> getHead() {
 		return head;
@@ -41,6 +44,7 @@ public class Train<T> {
 			Wagon<T> wagonBefore = this.getWagon(i - 1);
 			Wagon<T> removedWagon = this.getWagon(i);
 			wagonBefore.setNext(removedWagon.getNext());
+			// why would you bother using removedWagon.getNext() ? why not just go straight ahead with wagonBefore.setNext(this.getWagon(i + 1)) ?? doesn't seem to make a difference I guess maybe it's more robust, I dunno. I guess this.getWagon(i + 1) could return null and so um using removedWagon.getNext() uhh i'm confused. how do we know when it ends? The Wagon constructor seems to require a next value of type Wagon<Q> :S
 		}
 	}
 	
